@@ -6,6 +6,8 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
 import androidx.core.view.ViewCompat;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -65,5 +67,10 @@ public class MainActivity extends AppCompatActivity {
                         Game.VIEW_GAME));
         //ActivityCompat.startActivity(MainActivity.this, intent, activityOptions.toBundle());
         ActivityCompat.startActivity(MainActivity.this, myIntent, activityOptions.toBundle());
+    }
+
+    public void openCredits(View view) {
+        CreditsDialog creditsDialog = new CreditsDialog();
+        creditsDialog.show(getSupportFragmentManager(), "Credits Dialog");
     }
 }
